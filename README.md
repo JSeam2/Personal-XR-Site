@@ -1,4 +1,4 @@
-# My XR Site
+# Personalgit remote add origin https://github.com/JSeam2/Personal-XR-Site.git XR Site
 I'll be hosting my personal site (jseam.com)[https://jseam.com] with VR/XR. This is a work in progress.
 
 # Assets Used

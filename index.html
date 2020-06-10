@@ -8,23 +8,162 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     <title>Jseam's Virtual Space</title>
+
+    <!-- A-Frame Imports -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> 
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script> 
 </head>
 <body>
+  <script src="scripts.js"></script>
   <a-scene>
     <a-assets>
       <a-asset-item id="jseam" src="/assets/avatar/scene.gltf"></a-asset-item>
+      <!-- <img id="spotify" src="/assets/icon/spotify.png"> -->
     </a-assets>
     <a-entity environment="preset: forest;"></a-entity>
-    <a-entity camera mouse-cursor look-controls wasd-controls position="0 1.6 0"></a-entity>
+    <a-entity 
+      camera 
+      mouse-cursor 
+      look-controls 
+      wasd-controls 
+      position="0 1.6 0"
+      cursor="rayOrigin: mouse"
+    >
+   </a-entity>
     <a-entity gltf-model="#jseam" scale="0.022 0.022 0.022" position="0 0 -3"></a-entity>
     <a-text 
       value="Henlo! Welcome to my Virtual Space, it's pretty barebones with little interactivity for now.
        Dm me @henlojseam on my socials if you have any suggestions :D"
-      position="-2 3 -3"
+      position="-1.8 3.5 -4"
+      scale="0.8 0.8 0.8"
     >
     </a-text>
+
+    <a-box position="-2 0.5 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
+      navigate-on-click="url: https://www.facebook.com/henlojseam/"
+      shadow
+      color="#4CC3D9" 
+      event-set__enter="_event: mouseenter; color: #026fc9"
+      event-set__leave="_event: mouseleave; color: #4CC3D9"
+    >
+      <a-text position="-0.4 0.2 0.5" value="facebook"> </a-text>
+      <a-animation 
+        attribute="rotation"
+        dur="3000"
+        fill="forwards"
+        to="0 360 0"
+        direction="alternate"
+        begin="click">
+      </a-animation>
+    </a-box>
+
+    <a-box position="-1 0.5 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
+      navigate-on-click="url: https://www.twitter.com/henlojseam/"
+      shadow
+      color="#1DA1F2" 
+      event-set__enter="_event: mouseenter; color: #026fc9"
+      event-set__leave="_event: mouseleave; color: #1DA1F2"
+    >
+      <a-text position="-0.4 0.2 0.5" value="twitter"> </a-text>
+      <a-animation 
+        attribute="rotation"
+        dur="3000"
+        fill="forwards"
+        to="0 360 0"
+        direction="alternate"
+        begin="click">
+      </a-animation>
+    </a-box>
+
+    <a-box position="-2 1.2 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
+      navigate-on-click="url: https://open.spotify.com/artist/3Qp9DZAJ4PYhNHVQTr9Fq9?si=fqbYiK0WQCWCpfh1TGvuzw"
+      shadow
+      color="#1DB954" 
+      event-set__enter="_event: mouseenter; color: #14813A"
+      event-set__leave="_event: mouseleave; color: #1DB954"
+    >
+      <a-text position="-0.4 0.2 0.5" value="spotify"> </a-text>
+      <a-animation 
+        attribute="rotation"
+        dur="3000"
+        fill="forwards"
+        to="0 360 0"
+        direction="alternate"
+        begin="click">
+      </a-animation>
+    </a-box>
+
+    <a-box position="-1 1.2 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
+      navigate-on-click="url: https://instagram.com/henlojseam"
+      shadow
+      color="#e1306c" 
+      event-set__enter="_event: mouseenter; color: #a6214e"
+      event-set__leave="_event: mouseleave; color: #e1306c"
+    >
+      <a-text position="-0.4 0.2 0.5" value="instagram"> </a-text>
+      <a-animation 
+        attribute="rotation"
+        dur="3000"
+        fill="forwards"
+        to="0 360 0"
+        direction="alternate"
+        begin="click">
+      </a-animation>
+    </a-box>
+
+    <a-box position="-1 1.9 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
+      navigate-on-click="url: https://soundcloud.com/henlojseam"
+      shadow
+      color="#ff7700" 
+      event-set__enter="_event: mouseenter; color: #f34400"
+      event-set__leave="_event: mouseleave; color: #ff7700"
+    >
+      <a-text position="-0.4 0.2 0.5" value="soundcloud"> </a-text>
+      <a-animation 
+        attribute="rotation"
+        dur="3000"
+        fill="forwards"
+        to="0 360 0"
+        direction="alternate"
+        begin="click">
+      </a-animation>
+    </a-box>
+    <a-box position="-2 1.9 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
+      navigate-on-click="url: https://tiktok.com/@henlojseam"
+      shadow
+      color="#000" 
+      event-set__enter="_event: mouseenter; color: #fff"
+      event-set__leave="_event: mouseleave; color: #000"
+    >
+      <a-text position="-0.4 0.2 0.5" value="tiktok"> </a-text>
+      <a-animation 
+        attribute="rotation"
+        dur="3000"
+        fill="forwards"
+        to="0 360 0"
+        direction="alternate"
+        begin="click">
+      </a-animation>
+    </a-box>
+    <a-box position="1.2 1.9 -3" rotation="0 0 0" scale='1 1 1'
+      navigate-on-click="url: https://open.spotify.com/album/7yhy5lwdPFvd6z4vqHJR7e?si=svPmXQkVQD-4qMiyJdMcbw"
+      shadow
+      color="#FF00FF" 
+      event-set__enter="_event: mouseenter; color: #FF00FF"
+      event-set__leave="_event: mouseleave; color: #AA11AA"
+    >
+      <a-text position="-0.7 0.1 0.5" scale="0.5 0.5 0.5" value="Get me to 1k plays on Spotify"></a-text>
+      <a-text position="-0.6 -0.2 0.5" scale="0.5 0.5 0.5" value="Click Here Now!"></a-text>
+      <a-animation 
+        attribute="rotation"
+        dur="3000"
+        fill="forwards"
+        to="0 360 0"
+        direction="alternate"
+        begin="click">
+      </a-animation>
+    </a-box>
   </a-scene>
 </body>
 </html>
