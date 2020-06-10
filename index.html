@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <title>Jseam's Virtual Space</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> 
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset-item id="jseam" src="/assets/avatar/scene.gltf"></a-asset-item>
+    </a-assets>
+    <a-entity environment="preset: forest;"></a-entity>
+    <a-entity camera mouse-cursor look-controls wasd-controls position="0 1.6 0"></a-entity>
+    <a-entity gltf-model="#jseam" scale="0.022 0.022 0.022" position="0 0 -3"></a-entity>
+    <a-text 
+      value="Henlo! Welcome to my Virtual Space, it's pretty barebones with little interactivity for now.
+       Dm me @henlojseam on my socials if you have any suggestions :D"
+      position="-2 3 -3"
+    >
+    </a-text>
+  </a-scene>
+</body>
+</html>
