@@ -35,12 +35,37 @@
 </head>
 <body>
   <script src="scripts.js"></script>
-  <a-scene>
+  <a-scene
+    light="defaultLightsEnabled: false"
+    shadow
+  >
     <a-assets>
       <a-asset-item id="jseam" src="/assets/avatar/scene.gltf"></a-asset-item>
       <!-- <img id="spotify" src="/assets/icon/spotify.png"> -->
     </a-assets>
-    <a-entity environment="preset: forest;"></a-entity>
+
+    <!-- Shadow Light -->
+    <a-entity 
+      light="
+        type: point;
+        castShadow: true;
+        intensity: 0.6;
+        shadowCameraVisible: false;
+      "
+      position="0 5 3"
+      rotation="0 40 0">
+    </a-entity>
+    <!-- No Shadow Light -->
+    <!-- <a-light type="directional" position="0 0 0" rotation="0 20 0" castShadow="true" target="#directionaltarget">
+      <a-entity id="directionaltarget" position="0 3 -5"></a-entity>
+    </a-light> -->
+
+    <a-entity 
+      environment="preset: forest;"
+      lighting="none"
+      shadow
+    ></a-entity>
+
     <a-entity 
       camera 
       mouse-cursor 
@@ -65,16 +90,14 @@
       color="#4CC3D9" 
       event-set__enter="_event: mouseenter; color: #026fc9"
       event-set__leave="_event: mouseleave; color: #4CC3D9"
+      animation__mouseenter="
+        property: rotation; 
+        startEvents: mouseenter; 
+        dur: 1000; 
+        to: 0 360 0;
+      "
     >
       <a-text position="-0.4 0.2 0.5" value="facebook"> </a-text>
-      <a-animation 
-        attribute="rotation"
-        dur="3000"
-        fill="forwards"
-        to="0 360 0"
-        direction="alternate"
-        begin="click">
-      </a-animation>
     </a-box>
 
     <a-box position="-1 0.5 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
@@ -83,16 +106,14 @@
       color="#1DA1F2" 
       event-set__enter="_event: mouseenter; color: #026fc9"
       event-set__leave="_event: mouseleave; color: #1DA1F2"
+      animation__mouseenter="
+        property: rotation; 
+        startEvents: mouseenter; 
+        dur: 1000; 
+        to: 0 360 0;
+      "
     >
       <a-text position="-0.4 0.2 0.5" value="twitter"> </a-text>
-      <a-animation 
-        attribute="rotation"
-        dur="3000"
-        fill="forwards"
-        to="0 360 0"
-        direction="alternate"
-        begin="click">
-      </a-animation>
     </a-box>
 
     <a-box position="-2 1.2 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
@@ -101,16 +122,14 @@
       color="#1DB954" 
       event-set__enter="_event: mouseenter; color: #14813A"
       event-set__leave="_event: mouseleave; color: #1DB954"
+      animation__mouseenter="
+        property: rotation; 
+        startEvents: mouseenter; 
+        dur: 1000; 
+        to: 0 360 0;
+      "
     >
       <a-text position="-0.4 0.2 0.5" value="spotify"> </a-text>
-      <a-animation 
-        attribute="rotation"
-        dur="3000"
-        fill="forwards"
-        to="0 360 0"
-        direction="alternate"
-        begin="click">
-      </a-animation>
     </a-box>
 
     <a-box position="-1 1.2 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
@@ -119,16 +138,14 @@
       color="#e1306c" 
       event-set__enter="_event: mouseenter; color: #a6214e"
       event-set__leave="_event: mouseleave; color: #e1306c"
+      animation__mouseenter="
+        property: rotation; 
+        startEvents: mouseenter; 
+        dur: 1000; 
+        to: 0 360 0;
+      "
     >
       <a-text position="-0.4 0.2 0.5" value="instagram"> </a-text>
-      <a-animation 
-        attribute="rotation"
-        dur="3000"
-        fill="forwards"
-        to="0 360 0"
-        direction="alternate"
-        begin="click">
-      </a-animation>
     </a-box>
 
     <a-box position="-1 1.9 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
@@ -137,16 +154,14 @@
       color="#ff7700" 
       event-set__enter="_event: mouseenter; color: #f34400"
       event-set__leave="_event: mouseleave; color: #ff7700"
+      animation__mouseenter="
+        property: rotation; 
+        startEvents: mouseenter; 
+        dur: 1000; 
+        to: 0 360 0;
+      "
     >
       <a-text position="-0.4 0.2 0.5" value="soundcloud"> </a-text>
-      <a-animation 
-        attribute="rotation"
-        dur="3000"
-        fill="forwards"
-        to="0 360 0"
-        direction="alternate"
-        begin="click">
-      </a-animation>
     </a-box>
     <a-box position="-2 1.9 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
       navigate-on-click="url: https://tiktok.com/@henlojseam"
@@ -154,16 +169,14 @@
       color="#000" 
       event-set__enter="_event: mouseenter; color: #fff"
       event-set__leave="_event: mouseleave; color: #000"
+      animation__mouseenter="
+        property: rotation; 
+        startEvents: mouseenter; 
+        dur: 1000; 
+        to: 0 360 0;
+      "
     >
       <a-text position="-0.4 0.2 0.5" value="tiktok"> </a-text>
-      <a-animation 
-        attribute="rotation"
-        dur="3000"
-        fill="forwards"
-        to="0 360 0"
-        direction="alternate"
-        begin="click">
-      </a-animation>
     </a-box>
     <a-box position="1.2 1.9 -3" rotation="0 0 0" scale='1 1 1'
       navigate-on-click="url: https://open.spotify.com/album/7yhy5lwdPFvd6z4vqHJR7e?si=svPmXQkVQD-4qMiyJdMcbw"
@@ -171,17 +184,15 @@
       color="#FF00FF" 
       event-set__enter="_event: mouseenter; color: #FF00FF"
       event-set__leave="_event: mouseleave; color: #AA11AA"
+      animation__mouseenter="
+        property: rotation; 
+        startEvents: mouseenter; 
+        dur: 1000; 
+        to: 0 360 0;
+      "
     >
       <a-text position="-0.7 0.1 0.5" scale="0.5 0.5 0.5" value="Get me to 1k plays on Spotify"></a-text>
       <a-text position="-0.6 -0.2 0.5" scale="0.5 0.5 0.5" value="Click Here Now!"></a-text>
-      <a-animation 
-        attribute="rotation"
-        dur="3000"
-        fill="forwards"
-        to="0 360 0"
-        direction="alternate"
-        begin="click">
-      </a-animation>
     </a-box>
   </a-scene>
 </body>
