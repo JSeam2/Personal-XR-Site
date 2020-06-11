@@ -45,7 +45,7 @@
     </a-assets>
 
     <!-- Shadow Light -->
-    <a-entity 
+    <!-- <a-entity 
       light="
         type: point;
         castShadow: true;
@@ -54,11 +54,11 @@
       "
       position="0 5 3"
       rotation="0 40 0">
-    </a-entity>
+    </a-entity> -->
     <!-- No Shadow Light -->
-    <!-- <a-light type="directional" position="0 0 0" rotation="0 20 0" castShadow="true" target="#directionaltarget">
-      <a-entity id="directionaltarget" position="0 3 -5"></a-entity>
-    </a-light> -->
+    <a-light type="point" position="0 0 0" rotation="0 20 0" target="#directionaltarget" intensity="0.75">
+      <a-entity id="directionaltarget" position="0 5 3"></a-entity>
+    </a-light>
 
     <a-entity 
       environment="preset: forest;"
