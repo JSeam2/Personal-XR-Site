@@ -12,8 +12,8 @@
     <!-- A-Frame Imports -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script> 
-    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script> 
+    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
 
     <!-- Google Analytics -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -27,7 +27,8 @@
     </script>
 
     <!-- Zesty Market Integration -->
-    <script src="https://ipfs.io/ipns/lib.zesty.market/zesty-aframe-sdk.js"></script>
+    <!-- <script src="https://ipfs.io/ipns/lib.zesty.market/zesty-aframe-sdk.js"></script> -->
+    <script src="/assets/scripts/zesty-aframe-sdk.js"></script>
 
     <!-- Social Sharing -->
     <meta property="og:title" content="Jseam's Virtual Space">
@@ -45,13 +46,13 @@
     scrolling="no"
     frameborder="0"
     style="border: 0;"
-    onload="window.addEventListener('message', function(ev) { 
+    onload="window.addEventListener('message', function(ev) {
       if (ev.data.hasOwnProperty('adexHeight') && ('https://viewm.moonicorn.network' === ev.origin)) {
-        for (let f of document.getElementsByTagName('iframe')) {	
+        for (let f of document.getElementsByTagName('iframe')) {
           if (f.contentWindow === ev.source) {
             f.height = ev.data.adexHeight;
           }
-        }	
+        }
       }
     }, false)"
   ></iframe> -->
@@ -68,7 +69,7 @@
     </a-assets>
 
     <!-- Shadow Light -->
-    <!-- <a-entity 
+    <!-- <a-entity
       light="
         type: point;
         castShadow: true;
@@ -83,42 +84,42 @@
       <a-entity id="directionaltarget" position="0 5 3"></a-entity>
     </a-light>
 
-    <a-entity 
+    <a-entity
       environment="preset: forest;"
       lighting="none"
       shadow
     ></a-entity>
 
-    <a-entity 
-      camera 
-      mouse-cursor 
-      look-controls 
-      wasd-controls 
+    <a-entity
+      camera
+      mouse-cursor
+      look-controls
+      wasd-controls
       position="0 1.6 0"
       cursor="rayOrigin: mouse"
     >
     </a-entity>
 
     <!-- Zesty Market Ad -->
-    <a-entity visible="true" zesty-ad="creator: 0x1ce139b73dbc1d855e4b360856ac3885558fc5f8; adSpace: 2; beacon: true" position="1.2 0.8 -3"></a-entity>
+    <a-entity visible="true" zesty-banner="space: 2; beacon: true" position="1.2 0.8 -3"></a-entity>
 
     <!-- Anime girl -->
-    <a-entity 
-      gltf-model="#purpleheart" 
-      scale="1.2 1.2 1.2" 
-      position="0 0.2 -3" 
+    <a-entity
+      gltf-model="#purpleheart"
+      scale="1.2 1.2 1.2"
+      position="0 0.2 -3"
       animation-mixer="clip: solahiphop;"
     >
     </a-entity>
-    <!-- <a-entity 
-      gltf-model="#jseam" 
-      scale="0.0025 0.0025 0.0025" 
-      position="0 0.2 -3" 
+    <!-- <a-entity
+      gltf-model="#jseam"
+      scale="0.0025 0.0025 0.0025"
+      position="0 0.2 -3"
       animation-mixer="clip: outline|nezuko_blink;"
     >
     </a-entity> -->
     <!-- <a-entity gltf-model="#jseam" scale="0.022 0.022 0.022" position="0 0 -3"></a-entity> -->
-    <a-text 
+    <a-text
       value="Henlo! Welcome to my Virtual Space, it's pretty barebones with little interactivity for now.
        Dm me @henlojseam on my socials if you have any suggestions :D"
       position="-1.8 3.5 -4"
@@ -129,13 +130,13 @@
     <a-box position="-1 0.5 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
       navigate-on-click="url: https://www.twitter.com/henlojseam/"
       shadow
-      color="#1DA1F2" 
+      color="#1DA1F2"
       event-set__enter="_event: mouseenter; color: #026fc9"
       event-set__leave="_event: mouseleave; color: #1DA1F2"
       animation__mouseenter="
-        property: rotation; 
-        startEvents: mouseenter; 
-        dur: 1000; 
+        property: rotation;
+        startEvents: mouseenter;
+        dur: 1000;
         to: 0 360 0;
       "
     >
@@ -145,13 +146,13 @@
     <a-box position="-2 1.2 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
       navigate-on-click="url: https://open.spotify.com/artist/3Qp9DZAJ4PYhNHVQTr9Fq9?si=fqbYiK0WQCWCpfh1TGvuzw"
       shadow
-      color="#1DB954" 
+      color="#1DB954"
       event-set__enter="_event: mouseenter; color: #14813A"
       event-set__leave="_event: mouseleave; color: #1DB954"
       animation__mouseenter="
-        property: rotation; 
-        startEvents: mouseenter; 
-        dur: 1000; 
+        property: rotation;
+        startEvents: mouseenter;
+        dur: 1000;
         to: 0 360 0;
       "
     >
@@ -161,13 +162,13 @@
     <a-box position="-1 1.9 -3" rotation="0 0 0" scale='0.5 0.5 0.5'
       navigate-on-click="url: https://soundcloud.com/henlojseam"
       shadow
-      color="#ff7700" 
+      color="#ff7700"
       event-set__enter="_event: mouseenter; color: #f34400"
       event-set__leave="_event: mouseleave; color: #ff7700"
       animation__mouseenter="
-        property: rotation; 
-        startEvents: mouseenter; 
-        dur: 1000; 
+        property: rotation;
+        startEvents: mouseenter;
+        dur: 1000;
         to: 0 360 0;
       "
     >
@@ -176,13 +177,13 @@
     <a-box position="1.2 1.9 -3" rotation="0 0 0" scale='1 1 1'
       navigate-on-click="url: https://distrokid.com/hyperfollow/jseam/snail-love-feat-clyo"
       shadow
-      color="#FF00FF" 
+      color="#FF00FF"
       event-set__enter="_event: mouseenter; color: #FF00FF"
       event-set__leave="_event: mouseleave; color: #AA11AA"
       animation__mouseenter="
-        property: rotation; 
-        startEvents: mouseenter; 
-        dur: 1000; 
+        property: rotation;
+        startEvents: mouseenter;
+        dur: 1000;
         to: 0 360 0;
       "
     >
